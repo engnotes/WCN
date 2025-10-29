@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CSS3 Demonstration</title>
+
+<!-- Internal CSS Inclusion -->
+<style>
+    /* Basic CSS Syntax */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3;
+        margin: 20px;
+    }
+
+    /* Color and Background */
+    h1 {
+        color: darkblue;
+        background-color: lightyellow;
+        text-align: center;
+        padding: 10px;
+    }
+
+    /* Font styling */
+    p {
+        font-size: 16px;
+        color: #333;
+    }
+
+    /* Table Styling */
+    table {
+        border-collapse: collapse;
+        width: 60%;
+        margin: 10px 0;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+    }
+    th {
+        background-color: #d0e8ff;
+    }
+
+    /* List Styling */
+    ul {
+        list-style-type: square;
+        color: green;
+    }
+
+    /* CSS3 Selectors */
+    div p {
+        color: purple;
+    }
+
+    /* Class and ID Selectors */
+    .highlight {
+        background-color: #fffae6;
+        border-left: 4px solid orange;
+        padding: 5px;
+    }
+    #unique {
+        color: crimson;
+        font-weight: bold;
+    }
+
+    /* Pseudo-class */
+    a:hover {
+        color: red;
+        text-decoration: underline;
+    }
+
+    /* Pseudo-element */
+    p::first-letter {
+        font-size: 25px;
+        color: darkred;
+        font-weight: bold;
+    }
+
+</style>
+</head>
+<body>
+
+<h1>CSS3 Features Demonstration</h1>
+
+<p>This is an example paragraph showing basic <span class="highlight">CSS3 styling</span> effects.</p>
+<p id="unique">This line uses an ID selector for unique styling.</p>
+
+<!-- Hyperlink with pseudo-class -->
+<a href="https://guthib.com" target="_blank">Guthib</a>
+
+<!-- Table Example -->
+<h2>Student Marks</h2>
+<table>
+    <tr><th>Name</th><th>Marks</th></tr>
+    <tr><td>Goku</td><td>90</td></tr>
+    <tr><td>Vegeta</td><td>85</td></tr>
+</table>
+
+<!-- List Example -->
+<h2>Subjects</h2>
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
+
+<!-- Nested selector example -->
+<div>
+    <p>This paragraph is inside a div and styled using a descendant selector.</p>
+</div>
+
+</body>
+</html>
