@@ -1,0 +1,34 @@
+EXP8:-STEPS
+Step1: Select and Place the component Pcs, Routers & switches.
+Step 2: Connect all component
+        Router - 2911(Gig0/0)
+        Switch - 2960 (Gig0/1)
+        3 PCs (normal)
+Step3: Configure Router0 ,PC1,PC2,PC3
+      ||    router        ||
+      ||    switch        ||
+      ||  pc1 pc2 pc3     ||
+
+step4:click on router then cli then type this
+      enable
+      configure terminal
+      hostname DHCP_Router
+      ip dhcp pool DHCP
+      network 192.168.10.0 255.255.255.0
+      default-router 192.168.10.1
+      exit
+   
+      ip dhcp excluded-address 192.168.10.2 192.168.10.5
+     
+      interface GigabitEthernet 0/0
+      ip address 192.168.10.1 255.255.255.0
+      no shutdown
+ 
+stpe5:-click on pc1 -> desktop -> in ip configuration click on DHCP
+       click on pc2 -> desktop -> in ip configuration click on DHCP
+       click on pc3 -> desktop -> in ip configuration click on DHCP
+     
+Step 5: Test Connectivity:
+       1. Click on PC1 go to desktop tab
+       2. Go to command prompt
+       3.Type ping 192.168.10.7
