@@ -1,0 +1,54 @@
+REACT STEPS:
+1. Download and install node from                                      https://nodejs.org
+2. Open VS terminal and run                                            npx create-react-app react-demo
+3. Run                                                                 cd react-demo
+4. open file                                                           react-demo/src/App.js
+5. Delete entire code & paste this
+6. Run this after replacing the code in terminal                       npm start
+
+
+
+
+// App.js
+import React, { useState } from "react";
+
+// Functional Component
+function App() {
+  // State for handling form input
+  const [name, setName] = useState("");
+  const [items] = useState(["HTML", "CSS", "React"]);
+
+  // Event handler for form submit
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Hello, ${name}!`);
+  };
+
+  return (
+    <div style={{ textAlign: "center", padding: "30px" }}>
+      <h1 style={{ color: "blue" }}>ReactJS Demo</h1>
+      <p>Demonstrating Components, Forms, Events, and Keys</p>
+
+      {/* Form */}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)} // Event Handling
+          style={{ padding: "8px", marginRight: "10px" }}
+        />
+        <button type="submit">Submit</button>
+      </form>
+
+      <h3 style={{ marginTop: "30px" }}>Course List (Using Keys)</h3>
+      <ul style={{ listStyle: "none", padding: 0 }}>
+        {items.map((course, index) => (
+          <li key={index}>{course}</li> // Using keys
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
