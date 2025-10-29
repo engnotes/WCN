@@ -1,0 +1,38 @@
+NODE STEPS:
+1. Download and install node from                                      https://nodejs.org
+2. Create a folder with any name
+3. Inside the folder, create a file named                              callback_demo.js
+4. Paste the below code in it.
+5. Run this in VS terminal after that                                  node callback_demo.js
+
+
+
+
+
+console.log("Program Started");
+
+// -------------------- Callback Function --------------------
+// A callback is a function passed as an argument to another function
+function greet(name, callback) {
+    console.log("Hello, " + name);
+    callback();  // calling the callback function
+}
+
+function bye() {
+    console.log("Goodbye!");
+}
+
+greet("Grinch", bye);
+
+// -------------------- Event Loop Demonstration --------------------
+// setTimeout() is asynchronous — executes after current tasks are done
+
+console.log("Event Loop Example Begins");
+
+setTimeout(() => {
+    console.log("Executed after 2 seconds (Event Loop Async Task)");
+}, 2000);
+
+console.log("Event Loop Example Ends");
+
+console.log("Program Finished");
