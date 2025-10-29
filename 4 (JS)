@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Concepts Demo</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    h2 { color: #0074D9; }
+    button { margin: 5px; padding: 6px 12px; cursor: pointer; }
+    input { margin: 5px; padding: 5px; }
+    .box { margin: 10px 0; padding: 10px; border: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Full Demonstration</h1>
+
+  <!-- Variables and Operators -->
+  <div class="box">
+    <h2>Variables, Operators & Conditions</h2>
+    <p id="math"></p>
+  </div>
+
+  <!-- Loops -->
+  <div class="box">
+    <h2>Loop Example</h2>
+    <p id="loop"></p>
+  </div>
+
+  <!-- Functions -->
+  <div class="box">
+    <h2>Function Example</h2>
+    <button onclick="showSum()">Find Sum of 5 Numbers</button>
+    <p id="sumResult"></p>
+  </div>
+
+  <!-- Events -->
+  <div class="box">
+    <h2>Event Examples</h2>
+    <button onclick="clickEvent()">Click Event</button>
+    <p onmouseover="mouseOverEvent()">Hover Mouse Here</p>
+    <input type="text" onfocus="focusEvent(this)" placeholder="Focus Event Test">
+  </div>
+
+  <!-- Arrays -->
+  <div class="box">
+    <h2>Arrays & Methods</h2>
+    <button onclick="arrayDemo()">Show Fruits</button>
+    <p id="arrayOut"></p>
+  </div>
+
+  <!-- String & Date -->
+  <div class="box">
+    <h2>String & Date</h2>
+    <button onclick="stringDateDemo()">Show String & Date Info</button>
+    <p id="strDate"></p>
+  </div>
+
+  <!-- Classes & Objects -->
+  <div class="box">
+    <h2>Classes & Objects</h2>
+    <button onclick="classDemo()">Show Object Info</button>
+    <p id="objOut"></p>
+  </div>
+
+  <!-- Error Handling -->
+  <div class="box">
+    <h2>Error Handling</h2>
+    <button onclick="errorDemo()">Trigger Error</button>
+    <p id="errOut"></p>
+  </div>
+
+  <!-- Validation -->
+  <div class="box">
+    <h2>Form Validation</h2>
+    <form onsubmit="return validateForm()">
+      Name: <input type="text" id="name"><br>
+      Password: <input type="password" id="pass"><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    // VARIABLES, OPERATORS, CONDITIONS
+    let a = 10, b = 5;
+    let result = a * b;
+    let message = (result > 30) ? "Large result" : "Small result";
+    document.getElementById("math").innerHTML = Result = ${result} (${message});
+
+    // LOOPS
+    let txt = "";
+    for (let i = 1; i <= 5; i++) txt += Number: ${i}<br>;
+    document.getElementById("loop").innerHTML = txt;
+
+    // FUNCTION
+    function showSum() {
+      let sum = 0;
+      for (let i = 1; i <= 5; i++) sum += i;
+      document.getElementById("sumResult").innerHTML = Sum of 1 to 5 = ${sum};
+    }
+
+    // EVENTS
+    function clickEvent() {
+      alert("You clicked the button!");
+    }
+    function mouseOverEvent() {
+      alert("Mouse is over this text!");
+    }
+    function focusEvent(x) {
+      x.style.background = "lightgreen";
+    }
+
+    // ARRAYS
+    function arrayDemo() {
+      const fruits = ["Banana", "Apple", "Mango"];
+      fruits.push("Kiwi");
+      fruits.sort();
+      document.getElementById("arrayOut").innerHTML = fruits.join(" • ");
+    }
+
+    // STRING & DATE
+    function stringDateDemo() {
+      let str = "JavaScript";
+      let now = new Date();
+      document.getElementById("strDate").innerHTML =
+        String Length: ${str.length}<br>Current Date: ${now.toLocaleString()};
+    }
+
+    // CLASSES & OBJECTS
+    class Person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      greet() {
+        return Hello, I'm ${this.name} and I'm ${this.age} years old.;
+      }
+    }
+    function classDemo() {
+      let p1 = new Person("Om", 21);
+      document.getElementById("objOut").innerHTML = p1.greet();
+    }
+
+    // ERROR HANDLING
+    function errorDemo() {
+      try {
+        let x = undefinedVariable; // ReferenceError
+      } catch (err) {
+        document.getElementById("errOut").innerHTML = "Error caught: " + err.message;
+      }
+    }
+
+    // VALIDATION
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let pass = document.getElementById("pass").value;
+      if (name === "") {
+        alert("Name cannot be blank");
+        return false;
+      }
+      if (pass.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+      }
+      alert("Validation successful!");
+      return true;
+    }
+  </script>
+</body>
+</html>
